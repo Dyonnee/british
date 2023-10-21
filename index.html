@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangman Game</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div>
+        <label for="text-input">Enter Text:</label>
+        <textarea id="text-input"></textarea>
+    </div>
+    <div>
+        <label for="guess-input">Enter a Guess:</label>
+        <input type="text" id="guess-input">
+        <button onclick="guessWord()">Guess</button>
+    </div>
+    <div>
+        <label for="team-name">Team Name:</label>
+        <input type="text" id="team-name">
+        <button onclick="addTeam()">Add Team</button>
+    </div>
+    <div id="teams">
+        <!-- Team names and scores will be displayed here -->
+    </div>
+    <div>
+        <button onclick="seeText()">See Text</button>
+    </div>
+</body>
+<script src="hangman.js"></script>
+</html>

@@ -1,0 +1,50 @@
+/* Apply some basic styling to the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Style input and button elements */
+input, textarea, button {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the "See Text" button */
+button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+/* Style the team names and scores */
+#teams div {
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* Style the overall layout */
+div {
+    display: block;
+}
+
+/* Style the container for text input */
+#text-input {
+    width: 100%;
+    height: 100px;
+}
+
+/* Style the container for the guess input and team name input */
+#guess-input, #team-name {
+    width: 60%;
+}
+
+/* Style the labels for inputs */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 5px;
+}
