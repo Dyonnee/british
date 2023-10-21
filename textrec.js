@@ -5,13 +5,13 @@ function guessWord() {
     const guess = document.getElementById("guess-input").value.toLowerCase(); // Convert the guess to lowercase
     const occurrences = (text.match(new RegExp(guess, 'g')) || []).length; // Count how many times the guess appears in the text
     const teamIndex = teams.findIndex(team => team.activeTurn);
-    
+
     if (occurrences > 0 && teamIndex !== -1) {
         const score = occurrences * guess.length;
         teams[teamIndex].score += score; // Add the score to the team
         updateTeamsDisplay();
     }
-    
+
     // Clear the guess input
     document.getElementById("guess-input").value = '';
 }
@@ -26,13 +26,13 @@ function addTeam() {
 function updateTeamsDisplay() {
     const teamsDiv = document.getElementById("teams");
     teamsDiv.innerHTML = '';
-    
+
     teams.forEach(team => {
         const teamElement = document.createElement("div");
         teamElement.textContent = `${team.name} - Score: ${team.score}`;
         teamsDiv.appendChild(teamElement);
     });
-    
+
     // Toggle the active turn for teams
     const teamIndex = teams.findIndex(team => team.activeTurn);
     if (teamIndex !== -1) {
@@ -46,7 +46,25 @@ function updateTeamsDisplay() {
 }
 
 function seeText() {
-    alert("Text: " + text);
+    const textArea = document.getElementById("text-input");
+    textArea.style.display = "block";
+
+    const seeTextButton = document.getElementById("see-text");
+    seeTextButton.style.display = "none";
+    
+    const hideTextButton = document.getElementById("hide-text");
+    hideTextButton.style.display = "block";
+}
+
+function hideText() {
+    const textArea = document.getElementById("text-input");
+    textArea.style.display = "none";
+
+    const seeTextButton = document.getElementById("see-text");
+    seeTextButton.style.display = "block";
+    
+    const hideTextButton = document.getElementById("hide-text");
+    hideTextButton.style.display = "none";
 }
 
 document.getElementById("text-input").addEventListener("input", function() {
@@ -54,3 +72,9 @@ document.getElementById("text-input").addEventListener("input", function() {
 });
 
 updateTeamsDisplay();
+
+
+<div>
+    <button id="see-text" onclick="seeText()">See Text</button>
+    <button id="hide-text" onclick="hideText()" style="display: none">Hide Text</button>
+</div>
